@@ -1,0 +1,1806 @@
+nohup: ignoring input
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-10-21T14:22:13.472+02:00  INFO 5094 --- [           main] com.goup.GoUpApplication                 : Starting GoUpApplication v1.0.0 using Java 17.0.16 with PID 5094 (/mnt/c/Users/Julien/Nextcloud/Polytech/S7/projet_interspe/go_up/backend/target/backend-1.0.0.jar started by julien in /mnt/c/Users/Julien/Nextcloud/Polytech/S7/projet_interspe/go_up/backend)
+2025-10-21T14:22:13.488+02:00 DEBUG 5094 --- [           main] com.goup.GoUpApplication                 : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-10-21T14:22:13.490+02:00  INFO 5094 --- [           main] com.goup.GoUpApplication                 : No active profile set, falling back to 1 default profile: "default"
+2025-10-21T14:22:17.912+02:00  INFO 5094 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-21T14:22:18.170+02:00  INFO 5094 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 226 ms. Found 8 JPA repository interfaces.
+2025-10-21T14:22:19.776+02:00  INFO 5094 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-21T14:22:19.804+02:00  INFO 5094 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-21T14:22:19.805+02:00  INFO 5094 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-21T14:22:19.947+02:00  INFO 5094 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-21T14:22:19.951+02:00  INFO 5094 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6036 ms
+2025-10-21T14:22:20.406+02:00  INFO 5094 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-21T14:22:20.704+02:00  INFO 5094 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-10-21T14:22:20.854+02:00  INFO 5094 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-21T14:22:22.006+02:00  INFO 5094 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-21T14:22:22.112+02:00  INFO 5094 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-21T14:22:22.660+02:00  INFO 5094 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@66451058
+2025-10-21T14:22:22.666+02:00  INFO 5094 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-21T14:22:22.786+02:00  WARN 5094 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-21T14:22:27.532+02:00  INFO 5094 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-21T14:22:27.877+02:00  INFO 5094 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21T14:22:29.040+02:00  INFO 5094 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-21T14:22:30.835+02:00  WARN 5094 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-21T14:22:31.843+02:00  INFO 5094 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-10-21T14:22:31.860+02:00  INFO 5094 --- [           main] com.goup.GoUpApplication                 : Started GoUpApplication in 20.112 seconds (process running for 21.765)
+2025-10-21T14:22:32.088+02:00 DEBUG 5094 --- [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        sports s1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        sports s1_0
+2025-10-21T14:22:50.580+02:00  INFO 5094 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-21T14:22:50.582+02:00  INFO 5094 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-21T14:22:50.589+02:00  INFO 5094 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-10-21T14:22:51.396+02:00 DEBUG 5094 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+2025-10-21T14:22:51.432+02:00 DEBUG 5094 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.nom_utilisateur=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.nom_utilisateur=? 
+    fetch
+        first ? rows only
+2025-10-21T14:22:51.535+02:00 DEBUG 5094 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (date_inscription, distance_totale, email, mot_de_passe, nom_utilisateur, repetitions_totales, temps_total_minutes, total_defis_creees, total_defis_participes, total_defis_termines) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        users
+        (date_inscription, distance_totale, email, mot_de_passe, nom_utilisateur, repetitions_totales, temps_total_minutes, total_defis_creees, total_defis_participes, total_defis_termines) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-10-21T14:22:59.373+02:00 DEBUG 5094 --- [nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+2025-10-21T14:22:59.379+02:00 DEBUG 5094 --- [nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.nom_utilisateur=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.nom_utilisateur=? 
+    fetch
+        first ? rows only
+2025-10-21T14:22:59.384+02:00 DEBUG 5094 --- [nio-8080-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (date_inscription, distance_totale, email, mot_de_passe, nom_utilisateur, repetitions_totales, temps_total_minutes, total_defis_creees, total_defis_participes, total_defis_termines) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        users
+        (date_inscription, distance_totale, email, mot_de_passe, nom_utilisateur, repetitions_totales, temps_total_minutes, total_defis_creees, total_defis_participes, total_defis_termines) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-10-21T14:23:08.893+02:00 DEBUG 5094 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:23:08.921+02:00 DEBUG 5094 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:23:08.944+02:00 DEBUG 5094 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+Hibernate: 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+2025-10-21T14:23:08.950+02:00 DEBUG 5094 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+Hibernate: 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+2025-10-21T14:23:08.976+02:00 DEBUG 5094 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        friendships
+        (user_id, friend_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        friendships
+        (user_id, friend_id) 
+    values
+        (?, ?)
+2025-10-21T14:23:08.985+02:00 DEBUG 5094 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        friendships
+        (user_id, friend_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        friendships
+        (user_id, friend_id) 
+    values
+        (?, ?)
+2025-10-21T14:23:16.031+02:00 DEBUG 5094 --- [nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:23:16.043+02:00 DEBUG 5094 --- [nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+Hibernate: 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+2025-10-21T14:23:23.756+02:00 DEBUG 5094 --- [nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:23:23.760+02:00 DEBUG 5094 --- [nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+Hibernate: 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+2025-10-21T14:23:40.717+02:00 DEBUG 5094 --- [nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:23:40.725+02:00 DEBUG 5094 --- [nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom 
+    from
+        sports s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom 
+    from
+        sports s1_0 
+    where
+        s1_0.id=?
+2025-10-21T14:23:40.744+02:00 DEBUG 5094 --- [nio-8080-exec-7] org.hibernate.SQL                        : 
+    insert 
+    into
+        challenges
+        (createur_id, date_creation, date_debut, date_fin, description, nom, objectif, sport_id, type, visibilite) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        challenges
+        (createur_id, date_creation, date_debut, date_fin, description, nom, objectif, sport_id, type, visibilite) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-10-21T14:23:40.787+02:00 DEBUG 5094 --- [nio-8080-exec-7] org.hibernate.SQL                        : 
+    update
+        users 
+    set
+        distance_totale=?,
+        email=?,
+        mot_de_passe=?,
+        nom_utilisateur=?,
+        repetitions_totales=?,
+        temps_total_minutes=?,
+        total_defis_creees=?,
+        total_defis_participes=?,
+        total_defis_termines=? 
+    where
+        id=?
+Hibernate: 
+    update
+        users 
+    set
+        distance_totale=?,
+        email=?,
+        mot_de_passe=?,
+        nom_utilisateur=?,
+        repetitions_totales=?,
+        temps_total_minutes=?,
+        total_defis_creees=?,
+        total_defis_participes=?,
+        total_defis_termines=? 
+    where
+        id=?
+2025-10-21T14:23:40.793+02:00 DEBUG 5094 --- [nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        count(p1_0.id) 
+    from
+        participations p1_0 
+    where
+        p1_0.challenge_id=?
+Hibernate: 
+    select
+        count(p1_0.id) 
+    from
+        participations p1_0 
+    where
+        p1_0.challenge_id=?
+2025-10-21T14:23:40.800+02:00 DEBUG 5094 --- [nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        count(lc1_0.id) 
+    from
+        likes_challenges lc1_0 
+    where
+        lc1_0.challenge_id=?
+Hibernate: 
+    select
+        count(lc1_0.id) 
+    from
+        likes_challenges lc1_0 
+    where
+        lc1_0.challenge_id=?
+2025-10-21T14:23:40.808+02:00 DEBUG 5094 --- [nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        count(c1_0.id) 
+    from
+        comments c1_0 
+    where
+        c1_0.challenge_id=?
+Hibernate: 
+    select
+        count(c1_0.id) 
+    from
+        comments c1_0 
+    where
+        c1_0.challenge_id=?
+2025-10-21T14:23:47.287+02:00 DEBUG 5094 --- [nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:23:47.298+02:00 DEBUG 5094 --- [nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.createur_id,
+        c2_0.id,
+        c2_0.date_inscription,
+        c2_0.distance_totale,
+        c2_0.email,
+        c2_0.mot_de_passe,
+        c2_0.nom_utilisateur,
+        c2_0.repetitions_totales,
+        c2_0.temps_total_minutes,
+        c2_0.total_defis_creees,
+        c2_0.total_defis_participes,
+        c2_0.total_defis_termines,
+        c1_0.date_creation,
+        c1_0.date_debut,
+        c1_0.date_fin,
+        c1_0.description,
+        c1_0.nom,
+        c1_0.objectif,
+        c1_0.sport_id,
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom,
+        c1_0.type,
+        c1_0.visibilite 
+    from
+        challenges c1_0 
+    join
+        users c2_0 
+            on c2_0.id=c1_0.createur_id 
+    join
+        sports s1_0 
+            on s1_0.id=c1_0.sport_id 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.createur_id,
+        c2_0.id,
+        c2_0.date_inscription,
+        c2_0.distance_totale,
+        c2_0.email,
+        c2_0.mot_de_passe,
+        c2_0.nom_utilisateur,
+        c2_0.repetitions_totales,
+        c2_0.temps_total_minutes,
+        c2_0.total_defis_creees,
+        c2_0.total_defis_participes,
+        c2_0.total_defis_termines,
+        c1_0.date_creation,
+        c1_0.date_debut,
+        c1_0.date_fin,
+        c1_0.description,
+        c1_0.nom,
+        c1_0.objectif,
+        c1_0.sport_id,
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom,
+        c1_0.type,
+        c1_0.visibilite 
+    from
+        challenges c1_0 
+    join
+        users c2_0 
+            on c2_0.id=c1_0.createur_id 
+    join
+        sports s1_0 
+            on s1_0.id=c1_0.sport_id 
+    where
+        c1_0.id=?
+2025-10-21T14:23:47.320+02:00 DEBUG 5094 --- [nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        p1_0.id 
+    from
+        participations p1_0 
+    where
+        p1_0.user_id=? 
+        and p1_0.challenge_id=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        p1_0.id 
+    from
+        participations p1_0 
+    where
+        p1_0.user_id=? 
+        and p1_0.challenge_id=? 
+    fetch
+        first ? rows only
+2025-10-21T14:23:47.331+02:00 DEBUG 5094 --- [nio-8080-exec-9] org.hibernate.SQL                        : 
+    insert 
+    into
+        participations
+        (challenge_id, date_inscription, derniere_miseajour, distance_metres, repetitions, temps_minutes, termine, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        participations
+        (challenge_id, date_inscription, derniere_miseajour, distance_metres, repetitions, temps_minutes, termine, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-10-21T14:23:47.344+02:00 DEBUG 5094 --- [nio-8080-exec-9] org.hibernate.SQL                        : 
+    insert 
+    into
+        notifications
+        (contenu, date_creation, destinataire_id, lu, type) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        notifications
+        (contenu, date_creation, destinataire_id, lu, type) 
+    values
+        (?, ?, ?, ?, ?)
+2025-10-21T14:23:47.350+02:00 DEBUG 5094 --- [nio-8080-exec-9] org.hibernate.SQL                        : 
+    update
+        users 
+    set
+        distance_totale=?,
+        email=?,
+        mot_de_passe=?,
+        nom_utilisateur=?,
+        repetitions_totales=?,
+        temps_total_minutes=?,
+        total_defis_creees=?,
+        total_defis_participes=?,
+        total_defis_termines=? 
+    where
+        id=?
+Hibernate: 
+    update
+        users 
+    set
+        distance_totale=?,
+        email=?,
+        mot_de_passe=?,
+        nom_utilisateur=?,
+        repetitions_totales=?,
+        temps_total_minutes=?,
+        total_defis_creees=?,
+        total_defis_participes=?,
+        total_defis_termines=? 
+    where
+        id=?
+2025-10-21T14:23:55.028+02:00 DEBUG 5094 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:23:55.033+02:00 DEBUG 5094 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.createur_id,
+        c2_0.id,
+        c2_0.date_inscription,
+        c2_0.distance_totale,
+        c2_0.email,
+        c2_0.mot_de_passe,
+        c2_0.nom_utilisateur,
+        c2_0.repetitions_totales,
+        c2_0.temps_total_minutes,
+        c2_0.total_defis_creees,
+        c2_0.total_defis_participes,
+        c2_0.total_defis_termines,
+        c1_0.date_creation,
+        c1_0.date_debut,
+        c1_0.date_fin,
+        c1_0.description,
+        c1_0.nom,
+        c1_0.objectif,
+        c1_0.sport_id,
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom,
+        c1_0.type,
+        c1_0.visibilite 
+    from
+        challenges c1_0 
+    join
+        users c2_0 
+            on c2_0.id=c1_0.createur_id 
+    join
+        sports s1_0 
+            on s1_0.id=c1_0.sport_id 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.createur_id,
+        c2_0.id,
+        c2_0.date_inscription,
+        c2_0.distance_totale,
+        c2_0.email,
+        c2_0.mot_de_passe,
+        c2_0.nom_utilisateur,
+        c2_0.repetitions_totales,
+        c2_0.temps_total_minutes,
+        c2_0.total_defis_creees,
+        c2_0.total_defis_participes,
+        c2_0.total_defis_termines,
+        c1_0.date_creation,
+        c1_0.date_debut,
+        c1_0.date_fin,
+        c1_0.description,
+        c1_0.nom,
+        c1_0.objectif,
+        c1_0.sport_id,
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom,
+        c1_0.type,
+        c1_0.visibilite 
+    from
+        challenges c1_0 
+    join
+        users c2_0 
+            on c2_0.id=c1_0.createur_id 
+    join
+        sports s1_0 
+            on s1_0.id=c1_0.sport_id 
+    where
+        c1_0.id=?
+2025-10-21T14:23:55.046+02:00 DEBUG 5094 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        lc1_0.id 
+    from
+        likes_challenges lc1_0 
+    where
+        lc1_0.user_id=? 
+        and lc1_0.challenge_id=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        lc1_0.id 
+    from
+        likes_challenges lc1_0 
+    where
+        lc1_0.user_id=? 
+        and lc1_0.challenge_id=? 
+    fetch
+        first ? rows only
+2025-10-21T14:23:55.055+02:00 DEBUG 5094 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        likes_challenges
+        (challenge_id, date_like, user_id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        likes_challenges
+        (challenge_id, date_like, user_id) 
+    values
+        (?, ?, ?)
+2025-10-21T14:24:02.146+02:00 DEBUG 5094 --- [nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:24:02.151+02:00 DEBUG 5094 --- [nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.createur_id,
+        c2_0.id,
+        c2_0.date_inscription,
+        c2_0.distance_totale,
+        c2_0.email,
+        c2_0.mot_de_passe,
+        c2_0.nom_utilisateur,
+        c2_0.repetitions_totales,
+        c2_0.temps_total_minutes,
+        c2_0.total_defis_creees,
+        c2_0.total_defis_participes,
+        c2_0.total_defis_termines,
+        c1_0.date_creation,
+        c1_0.date_debut,
+        c1_0.date_fin,
+        c1_0.description,
+        c1_0.nom,
+        c1_0.objectif,
+        c1_0.sport_id,
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom,
+        c1_0.type,
+        c1_0.visibilite 
+    from
+        challenges c1_0 
+    join
+        users c2_0 
+            on c2_0.id=c1_0.createur_id 
+    join
+        sports s1_0 
+            on s1_0.id=c1_0.sport_id 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.createur_id,
+        c2_0.id,
+        c2_0.date_inscription,
+        c2_0.distance_totale,
+        c2_0.email,
+        c2_0.mot_de_passe,
+        c2_0.nom_utilisateur,
+        c2_0.repetitions_totales,
+        c2_0.temps_total_minutes,
+        c2_0.total_defis_creees,
+        c2_0.total_defis_participes,
+        c2_0.total_defis_termines,
+        c1_0.date_creation,
+        c1_0.date_debut,
+        c1_0.date_fin,
+        c1_0.description,
+        c1_0.nom,
+        c1_0.objectif,
+        c1_0.sport_id,
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom,
+        c1_0.type,
+        c1_0.visibilite 
+    from
+        challenges c1_0 
+    join
+        users c2_0 
+            on c2_0.id=c1_0.createur_id 
+    join
+        sports s1_0 
+            on s1_0.id=c1_0.sport_id 
+    where
+        c1_0.id=?
+2025-10-21T14:24:02.159+02:00 DEBUG 5094 --- [nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        lc1_0.id 
+    from
+        likes_challenges lc1_0 
+    where
+        lc1_0.user_id=? 
+        and lc1_0.challenge_id=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        lc1_0.id 
+    from
+        likes_challenges lc1_0 
+    where
+        lc1_0.user_id=? 
+        and lc1_0.challenge_id=? 
+    fetch
+        first ? rows only
+2025-10-21T14:24:02.165+02:00 DEBUG 5094 --- [nio-8080-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        likes_challenges
+        (challenge_id, date_like, user_id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        likes_challenges
+        (challenge_id, date_like, user_id) 
+    values
+        (?, ?, ?)
+2025-10-21T14:24:02.172+02:00 DEBUG 5094 --- [nio-8080-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        notifications
+        (contenu, date_creation, destinataire_id, lu, type) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        notifications
+        (contenu, date_creation, destinataire_id, lu, type) 
+    values
+        (?, ?, ?, ?, ?)
+2025-10-21T14:24:11.533+02:00 DEBUG 5094 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:24:11.540+02:00 DEBUG 5094 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.createur_id,
+        c2_0.id,
+        c2_0.date_inscription,
+        c2_0.distance_totale,
+        c2_0.email,
+        c2_0.mot_de_passe,
+        c2_0.nom_utilisateur,
+        c2_0.repetitions_totales,
+        c2_0.temps_total_minutes,
+        c2_0.total_defis_creees,
+        c2_0.total_defis_participes,
+        c2_0.total_defis_termines,
+        c1_0.date_creation,
+        c1_0.date_debut,
+        c1_0.date_fin,
+        c1_0.description,
+        c1_0.nom,
+        c1_0.objectif,
+        c1_0.sport_id,
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom,
+        c1_0.type,
+        c1_0.visibilite 
+    from
+        challenges c1_0 
+    join
+        users c2_0 
+            on c2_0.id=c1_0.createur_id 
+    join
+        sports s1_0 
+            on s1_0.id=c1_0.sport_id 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.createur_id,
+        c2_0.id,
+        c2_0.date_inscription,
+        c2_0.distance_totale,
+        c2_0.email,
+        c2_0.mot_de_passe,
+        c2_0.nom_utilisateur,
+        c2_0.repetitions_totales,
+        c2_0.temps_total_minutes,
+        c2_0.total_defis_creees,
+        c2_0.total_defis_participes,
+        c2_0.total_defis_termines,
+        c1_0.date_creation,
+        c1_0.date_debut,
+        c1_0.date_fin,
+        c1_0.description,
+        c1_0.nom,
+        c1_0.objectif,
+        c1_0.sport_id,
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom,
+        c1_0.type,
+        c1_0.visibilite 
+    from
+        challenges c1_0 
+    join
+        users c2_0 
+            on c2_0.id=c1_0.createur_id 
+    join
+        sports s1_0 
+            on s1_0.id=c1_0.sport_id 
+    where
+        c1_0.id=?
+2025-10-21T14:24:11.549+02:00 DEBUG 5094 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        comments
+        (auteur_id, challenge_id, date_creation, texte) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        comments
+        (auteur_id, challenge_id, date_creation, texte) 
+    values
+        (?, ?, ?, ?)
+2025-10-21T14:24:11.556+02:00 DEBUG 5094 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        notifications
+        (contenu, date_creation, destinataire_id, lu, type) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        notifications
+        (contenu, date_creation, destinataire_id, lu, type) 
+    values
+        (?, ?, ?, ?, ?)
+2025-10-21T14:24:20.197+02:00 DEBUG 5094 --- [nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:24:20.213+02:00 DEBUG 5094 --- [nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.createur_id,
+        c2_0.id,
+        c2_0.date_inscription,
+        c2_0.distance_totale,
+        c2_0.email,
+        c2_0.mot_de_passe,
+        c2_0.nom_utilisateur,
+        c2_0.repetitions_totales,
+        c2_0.temps_total_minutes,
+        c2_0.total_defis_creees,
+        c2_0.total_defis_participes,
+        c2_0.total_defis_termines,
+        c1_0.date_creation,
+        c1_0.date_debut,
+        c1_0.date_fin,
+        c1_0.description,
+        c1_0.nom,
+        c1_0.objectif,
+        c1_0.sport_id,
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom,
+        c1_0.type,
+        c1_0.visibilite 
+    from
+        challenges c1_0 
+    join
+        users c2_0 
+            on c2_0.id=c1_0.createur_id 
+    join
+        sports s1_0 
+            on s1_0.id=c1_0.sport_id 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.createur_id,
+        c2_0.id,
+        c2_0.date_inscription,
+        c2_0.distance_totale,
+        c2_0.email,
+        c2_0.mot_de_passe,
+        c2_0.nom_utilisateur,
+        c2_0.repetitions_totales,
+        c2_0.temps_total_minutes,
+        c2_0.total_defis_creees,
+        c2_0.total_defis_participes,
+        c2_0.total_defis_termines,
+        c1_0.date_creation,
+        c1_0.date_debut,
+        c1_0.date_fin,
+        c1_0.description,
+        c1_0.nom,
+        c1_0.objectif,
+        c1_0.sport_id,
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom,
+        c1_0.type,
+        c1_0.visibilite 
+    from
+        challenges c1_0 
+    join
+        users c2_0 
+            on c2_0.id=c1_0.createur_id 
+    join
+        sports s1_0 
+            on s1_0.id=c1_0.sport_id 
+    where
+        c1_0.id=?
+2025-10-21T14:24:20.220+02:00 DEBUG 5094 --- [nio-8080-exec-6] org.hibernate.SQL                        : 
+    insert 
+    into
+        comments
+        (auteur_id, challenge_id, date_creation, texte) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        comments
+        (auteur_id, challenge_id, date_creation, texte) 
+    values
+        (?, ?, ?, ?)
+2025-10-21T14:24:28.070+02:00 DEBUG 5094 --- [nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.createur_id,
+        c2_0.id,
+        c2_0.date_inscription,
+        c2_0.distance_totale,
+        c2_0.email,
+        c2_0.mot_de_passe,
+        c2_0.nom_utilisateur,
+        c2_0.repetitions_totales,
+        c2_0.temps_total_minutes,
+        c2_0.total_defis_creees,
+        c2_0.total_defis_participes,
+        c2_0.total_defis_termines,
+        c1_0.date_creation,
+        c1_0.date_debut,
+        c1_0.date_fin,
+        c1_0.description,
+        c1_0.nom,
+        c1_0.objectif,
+        c1_0.sport_id,
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom,
+        c1_0.type,
+        c1_0.visibilite 
+    from
+        challenges c1_0 
+    join
+        users c2_0 
+            on c2_0.id=c1_0.createur_id 
+    join
+        sports s1_0 
+            on s1_0.id=c1_0.sport_id 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.createur_id,
+        c2_0.id,
+        c2_0.date_inscription,
+        c2_0.distance_totale,
+        c2_0.email,
+        c2_0.mot_de_passe,
+        c2_0.nom_utilisateur,
+        c2_0.repetitions_totales,
+        c2_0.temps_total_minutes,
+        c2_0.total_defis_creees,
+        c2_0.total_defis_participes,
+        c2_0.total_defis_termines,
+        c1_0.date_creation,
+        c1_0.date_debut,
+        c1_0.date_fin,
+        c1_0.description,
+        c1_0.nom,
+        c1_0.objectif,
+        c1_0.sport_id,
+        s1_0.id,
+        s1_0.categorie,
+        s1_0.nom,
+        c1_0.type,
+        c1_0.visibilite 
+    from
+        challenges c1_0 
+    join
+        users c2_0 
+            on c2_0.id=c1_0.createur_id 
+    join
+        sports s1_0 
+            on s1_0.id=c1_0.sport_id 
+    where
+        c1_0.id=?
+2025-10-21T14:24:28.080+02:00 DEBUG 5094 --- [nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        count(p1_0.id) 
+    from
+        participations p1_0 
+    where
+        p1_0.challenge_id=?
+Hibernate: 
+    select
+        count(p1_0.id) 
+    from
+        participations p1_0 
+    where
+        p1_0.challenge_id=?
+2025-10-21T14:24:28.085+02:00 DEBUG 5094 --- [nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        count(lc1_0.id) 
+    from
+        likes_challenges lc1_0 
+    where
+        lc1_0.challenge_id=?
+Hibernate: 
+    select
+        count(lc1_0.id) 
+    from
+        likes_challenges lc1_0 
+    where
+        lc1_0.challenge_id=?
+2025-10-21T14:24:28.092+02:00 DEBUG 5094 --- [nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        count(c1_0.id) 
+    from
+        comments c1_0 
+    where
+        c1_0.challenge_id=?
+Hibernate: 
+    select
+        count(c1_0.id) 
+    from
+        comments c1_0 
+    where
+        c1_0.challenge_id=?
+2025-10-21T14:24:41.473+02:00 DEBUG 5094 --- [io-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:24:41.478+02:00 DEBUG 5094 --- [io-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:24:41.483+02:00 DEBUG 5094 --- [io-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+Hibernate: 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+2025-10-21T14:24:41.488+02:00 DEBUG 5094 --- [io-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+Hibernate: 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+2025-10-21T14:24:41.495+02:00 DEBUG 5094 --- [io-8080-exec-10] org.hibernate.SQL                        : 
+    delete 
+    from
+        friendships 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        friendships 
+    where
+        user_id=?
+2025-10-21T14:24:41.498+02:00 DEBUG 5094 --- [io-8080-exec-10] org.hibernate.SQL                        : 
+    delete 
+    from
+        friendships 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        friendships 
+    where
+        user_id=?
+2025-10-21T14:24:50.437+02:00 DEBUG 5094 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:24:50.441+02:00 DEBUG 5094 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+Hibernate: 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+2025-10-21T14:24:58.814+02:00 DEBUG 5094 --- [nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.date_inscription,
+        u1_0.distance_totale,
+        u1_0.email,
+        u1_0.mot_de_passe,
+        u1_0.nom_utilisateur,
+        u1_0.repetitions_totales,
+        u1_0.temps_total_minutes,
+        u1_0.total_defis_creees,
+        u1_0.total_defis_participes,
+        u1_0.total_defis_termines 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-21T14:24:58.853+02:00 DEBUG 5094 --- [nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+Hibernate: 
+    select
+        a1_0.user_id,
+        a1_1.id,
+        a1_1.date_inscription,
+        a1_1.distance_totale,
+        a1_1.email,
+        a1_1.mot_de_passe,
+        a1_1.nom_utilisateur,
+        a1_1.repetitions_totales,
+        a1_1.temps_total_minutes,
+        a1_1.total_defis_creees,
+        a1_1.total_defis_participes,
+        a1_1.total_defis_termines 
+    from
+        friendships a1_0 
+    join
+        users a1_1 
+            on a1_1.id=a1_0.friend_id 
+    where
+        a1_0.user_id=?
+2025-10-21T14:25:17.126+02:00  INFO 5094 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21T14:25:17.133+02:00  INFO 5094 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-21T14:25:17.140+02:00  INFO 5094 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

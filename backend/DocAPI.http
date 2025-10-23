@@ -1,0 +1,505 @@
+### ====================================================================
+### API REFERENCE - GoUp Backend
+### Documentation complète pour l'intégration frontend
+### Base URL: http://localhost:8080/api
+### ====================================================================
+
+@baseUrl = http://localhost:8080/api
+
+### ====================================================================
+### 1. AUTHENTIFICATION & UTILISATEURS
+### ====================================================================
+
+### 1.1 Inscription d'un nouvel utilisateur
+# POST /api/users/register
+# Body: { "nomUtilisateur": string, "email": string, "motDePasse": string }
+# Response 201: UserDTO
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "nomUtilisateur": "alice",
+  "email": "alice@example.com",
+  "motDePasse": "password123"
+}
+
+### 1.2 Connexion d'un utilisateur
+# POST /api/users/login
+# Body: { "identifiant": string (email ou username), "motDePasse": string }
+# Response 200: UserDTO | 401: Unauthorized
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "identifiant": "alice@example.com",
+  "motDePasse": "password123"
+}
+
+### 1.3 Obtenir un utilisateur par ID
+# GET /api/users/{id}
+# Response 200: UserDTO | 404: Not Found
+GET {{baseUrl}}/users/1
+
+### 1.4 Lister tous les utilisateurs
+# GET /api/users
+# Response 200: UserDTO[]
+GET {{baseUrl}}/users
+
+### ====================================================================
+### 2. GESTION DES AMIS
+### ====================================================================
+
+### 2.1 Ajouter un ami (relation bidirectionnelle)
+# POST /api/users/{userId}/friends/{friendId}
+# Response 200: OK | 400: Bad Request
+POST {{baseUrl}}/users/1/friends/2
+
+### 2.2 Retirer un ami (relation bidirectionnelle)
+# DELETE /api/users/{userId}/friends/{friendId}
+# Response 200: OK | 400: Bad Request
+DELETE {{baseUrl}}/users/1/friends/2
+
+### 2.3 Obtenir la liste des amis d'un utilisateur
+# GET /api/users/{userId}/friends
+# Response 200: UserDTO[]
+GET {{baseUrl}}/users/1/friends
+
+### ====================================================================
+### 3. SPORTS
+### ====================================================================
+
+### 3.1 Lister tous les sports disponibles
+# GET /api/sports
+# Response 200: Sport[]
+GET {{baseUrl}}/sports
+
+### 3.2 Obtenir un sport par ID
+# GET /api/sports/{id}
+# Response 200: Sport | 404: Not Found
+GET {{baseUrl}}/sports/1
+
+### 3.3 Lister les sports par catégorie
+# GET /api/sports/categorie/{categorie}
+# Response 200: Sport[]
+# Catégories: "Cardio", "Musculation", "Sports d'équipe", "Bien-être", "Plein air"
+GET {{baseUrl}}/sports/categorie/Cardio
+
+### 3.4 Créer un nouveau sport (admin)
+# POST /api/sports?nom={nom}&categorie={categorie}
+# Response 201: Sport
+POST {{baseUrl}}/sports?nom=Boxe&categorie=Combat
+
+### ====================================================================
+### 4. DÉFIS (CHALLENGES)
+### ====================================================================
+
+### 4.1 Créer un nouveau défi
+# POST /api/challenges?userId={userId}
+# Body: ChallengeCreateDTO
+# Response 201: ChallengeDTO | 400: Bad Request
+# Types: DISTANCE (mètres), TEMPS (minutes), REPETITION (nombre)
+# Visibilité: PUBLIC, FRIENDS_ONLY, PRIVATE
+POST {{baseUrl}}/challenges?userId=1
+Content-Type: application/json
+
+{
+  "nom": "Défi Running Octobre",
+  "description": "Courir 50 km en octobre",
+  "sportId": 1,
+  "type": "DISTANCE",
+  "objectif": 50000,
+  "dateDebut": "2025-10-15T00:00:00",
+  "dateFin": "2025-10-31T23:59:59",
+  "visibilite": "PUBLIC"
+}
+
+### 4.2 Créer un défi de répétitions
+POST {{baseUrl}}/challenges?userId=1
+Content-Type: application/json
+
+{
+  "nom": "100 Pompes Challenge",
+  "description": "100 pompes en 30 jours",
+  "sportId": 7,
+  "type": "REPETITION",
+  "objectif": 100,
+  "dateDebut": "2025-10-15T00:00:00",
+  "dateFin": "2025-11-15T23:59:59",
+  "visibilite": "PUBLIC"
+}
+
+### 4.3 Créer un défi de temps
+POST {{baseUrl}}/challenges?userId=1
+Content-Type: application/json
+
+{
+  "nom": "10h de Yoga",
+  "description": "10 heures de yoga ce mois",
+  "sportId": 14,
+  "type": "TEMPS",
+  "objectif": 600,
+  "dateDebut": "2025-10-15T00:00:00",
+  "dateFin": "2025-10-31T23:59:59",
+  "visibilite": "FRIENDS_ONLY"
+}
+
+### 4.4 Obtenir un défi par ID (avec compteurs)
+# GET /api/challenges/{id}
+# Response 200: ChallengeDTO (inclut nombreParticipants, nombreLikes, nombreCommentaires)
+GET {{baseUrl}}/challenges/1
+
+### 4.5 Lister tous les défis
+# GET /api/challenges
+# Response 200: ChallengeDTO[]
+GET {{baseUrl}}/challenges
+
+### 4.6 Lister les défis actifs (en cours)
+# GET /api/challenges/active
+# Response 200: ChallengeDTO[] (défis entre dateDebut et dateFin)
+GET {{baseUrl}}/challenges/active
+
+### 4.7 Lister les défis visibles pour un utilisateur
+# GET /api/challenges/visible/{userId}
+# Response 200: ChallengeDTO[] (défis publics + défis d'amis)
+GET {{baseUrl}}/challenges/visible/1
+
+### 4.8 Lister les défis créés par un utilisateur
+# GET /api/challenges/user/{userId}
+# Response 200: ChallengeDTO[]
+GET {{baseUrl}}/challenges/user/1
+
+### 4.9 Changer la visibilité d'un défi
+# PUT /api/challenges/{id}/visibility?visibility={visibility}
+# visibility: PUBLIC | FRIENDS_ONLY | PRIVATE
+# Response 200: OK
+PUT {{baseUrl}}/challenges/1/visibility?visibility=FRIENDS_ONLY
+
+### ====================================================================
+### 5. PARTICIPATIONS
+### ====================================================================
+
+### 5.1 Rejoindre un défi
+# POST /api/participations?userId={userId}&challengeId={challengeId}
+# Response 201: ParticipationDTO | 400: Bad Request
+POST {{baseUrl}}/participations?userId=2&challengeId=1
+
+### 5.2 Mettre à jour sa progression (distance)
+# PUT /api/participations?userId={userId}&challengeId={challengeId}
+# Body: ProgressionUpdateDTO
+# Response 200: ParticipationDTO
+PUT {{baseUrl}}/participations?userId=2&challengeId=1
+Content-Type: application/json
+
+{
+  "distanceMetres": 5000
+}
+
+### 5.3 Mettre à jour sa progression (répétitions)
+PUT {{baseUrl}}/participations?userId=2&challengeId=2
+Content-Type: application/json
+
+{
+  "repetitions": 20
+}
+
+### 5.4 Mettre à jour sa progression (temps)
+PUT {{baseUrl}}/participations?userId=2&challengeId=3
+Content-Type: application/json
+
+{
+  "tempsMinutes": 60
+}
+
+### 5.5 Obtenir les participations d'un utilisateur
+# GET /api/participations/user/{userId}
+# Response 200: ParticipationDTO[]
+GET {{baseUrl}}/participations/user/2
+
+### 5.6 Obtenir les participants d'un défi
+# GET /api/participations/challenge/{challengeId}
+# Response 200: ParticipationDTO[]
+GET {{baseUrl}}/participations/challenge/1
+
+### 5.7 Obtenir une participation spécifique
+# GET /api/participations?userId={userId}&challengeId={challengeId}
+# Response 200: ParticipationDTO | 404: Not Found
+GET {{baseUrl}}/participations?userId=2&challengeId=1
+
+### ====================================================================
+### 6. COMMENTAIRES
+### ====================================================================
+
+### 6.1 Créer un commentaire sur un défi
+# POST /api/comments?userId={userId}&challengeId={challengeId}
+# Body: CommentCreateDTO
+# Response 201: CommentDTO
+POST {{baseUrl}}/comments?userId=2&challengeId=1
+Content-Type: application/json
+
+{
+  "texte": "Super défi ! J'ai hâte de commencer 🏃"
+}
+
+### 6.2 Obtenir les commentaires d'un défi
+# GET /api/comments/challenge/{challengeId}
+# Response 200: CommentDTO[]
+GET {{baseUrl}}/comments/challenge/1
+
+### 6.3 Supprimer un commentaire
+# DELETE /api/comments/{commentId}?userId={userId}
+# Response 200: OK | 400: Bad Request (pas l'auteur)
+DELETE {{baseUrl}}/comments/1?userId=2
+
+### ====================================================================
+### 7. LIKES
+### ====================================================================
+
+### 7.1 Liker un défi
+# POST /api/likes/challenge/{challengeId}?userId={userId}
+# Response 200: OK
+POST {{baseUrl}}/likes/challenge/1?userId=2
+
+### 7.2 Retirer un like d'un défi
+# DELETE /api/likes/challenge/{challengeId}?userId={userId}
+# Response 200: OK
+DELETE {{baseUrl}}/likes/challenge/1?userId=2
+
+### 7.3 Compter les likes d'un défi
+# GET /api/likes/challenge/{challengeId}/count
+# Response 200: number
+GET {{baseUrl}}/likes/challenge/1/count
+
+### 7.4 Liker un commentaire
+# POST /api/likes/comment/{commentId}?userId={userId}
+# Response 200: OK
+POST {{baseUrl}}/likes/comment/1?userId=1
+
+### 7.5 Retirer un like d'un commentaire
+# DELETE /api/likes/comment/{commentId}?userId={userId}
+# Response 200: OK
+DELETE {{baseUrl}}/likes/comment/1?userId=1
+
+### 7.6 Compter les likes d'un commentaire
+# GET /api/likes/comment/{commentId}/count
+# Response 200: number
+GET {{baseUrl}}/likes/comment/1/count
+
+### ====================================================================
+### 8. NOTIFICATIONS
+### ====================================================================
+
+### 8.1 Obtenir les notifications d'un utilisateur
+# GET /api/notifications/user/{userId}
+# Response 200: NotificationDTO[]
+GET {{baseUrl}}/notifications/user/1
+
+### 8.2 Obtenir les notifications non lues
+# GET /api/notifications/user/{userId}/unread
+# Response 200: NotificationDTO[]
+GET {{baseUrl}}/notifications/user/1/unread
+
+### 8.3 Marquer une notification comme lue
+# PUT /api/notifications/{notificationId}/read
+# Response 200: OK
+PUT {{baseUrl}}/notifications/1/read
+
+### 8.4 Marquer toutes les notifications comme lues
+# PUT /api/notifications/user/{userId}/read-all
+# Response 200: OK
+PUT {{baseUrl}}/notifications/user/1/read-all
+
+### ====================================================================
+### 9. TYPES DE DONNÉES (DTOs)
+### ====================================================================
+
+### UserDTO (Response)
+# {
+#   "id": number,
+#   "nomUtilisateur": string,
+#   "email": string,
+#   "dateInscription": ISO8601,
+#   "totalDefisCreees": number,
+#   "totalDefisParticipes": number,
+#   "totalDefisTermines": number,
+#   "distanceTotale": number,      // en mètres
+#   "tempsTotalMinutes": number,   // en minutes
+#   "repetitionsTotales": number
+# }
+
+### UserRegistrationDTO (Request)
+# {
+#   "nomUtilisateur": string,
+#   "email": string,
+#   "motDePasse": string
+# }
+
+### UserLoginDTO (Request)
+# {
+#   "identifiant": string,  // email ou nomUtilisateur
+#   "motDePasse": string
+# }
+
+### ChallengeDTO (Response)
+# {
+#   "id": number,
+#   "nom": string,
+#   "description": string,
+#   "sportNom": string,
+#   "sportCategorie": string,
+#   "type": "DISTANCE" | "TEMPS" | "REPETITION",
+#   "objectif": number,
+#   "dateDebut": ISO8601,
+#   "dateFin": ISO8601,
+#   "createurNom": string,
+#   "createurId": number,
+#   "visibilite": "PUBLIC" | "FRIENDS_ONLY" | "PRIVATE",
+#   "dateCreation": ISO8601,
+#   "nombreParticipants": number,
+#   "nombreLikes": number,
+#   "nombreCommentaires": number
+# }
+
+### ChallengeCreateDTO (Request)
+# {
+#   "nom": string,
+#   "description": string,
+#   "sportId": number,
+#   "type": "DISTANCE" | "TEMPS" | "REPETITION",
+#   "objectif": number,
+#   "dateDebut": ISO8601,
+#   "dateFin": ISO8601,
+#   "visibilite": "PUBLIC" | "FRIENDS_ONLY" | "PRIVATE"
+# }
+
+### ParticipationDTO (Response)
+# {
+#   "id": number,
+#   "userNom": string,
+#   "userId": number,
+#   "challengeNom": string,
+#   "challengeId": number,
+#   "dateInscription": ISO8601,
+#   "tempsMinutes": number,
+#   "distanceMetres": number,
+#   "repetitions": number,
+#   "termine": boolean,
+#   "derniereMiseAJour": ISO8601
+# }
+
+### ProgressionUpdateDTO (Request)
+# {
+#   "tempsMinutes"?: number,     // optionnel selon le type de défi
+#   "distanceMetres"?: number,   // optionnel selon le type de défi
+#   "repetitions"?: number       // optionnel selon le type de défi
+# }
+
+### CommentDTO (Response)
+# {
+#   "id": number,
+#   "texte": string,
+#   "auteurNom": string,
+#   "auteurId": number,
+#   "challengeId": number,
+#   "dateCreation": ISO8601,
+#   "nombreLikes": number
+# }
+
+### CommentCreateDTO (Request)
+# {
+#   "texte": string
+# }
+
+### NotificationDTO (Response)
+# {
+#   "id": number,
+#   "type": string,
+#   "contenu": string,
+#   "dateCreation": ISO8601,
+#   "lu": boolean
+# }
+
+### Sport (Entity & Response)
+# {
+#   "id": number,
+#   "nom": string,
+#   "categorie": string
+# }
+
+### ====================================================================
+### 10. SCÉNARIOS D'USAGE TYPIQUES
+### ====================================================================
+
+### Scénario 1: Inscription et création d'un défi
+# 1. POST /api/users/register
+# 2. POST /api/users/login
+# 3. GET /api/sports (choisir un sport)
+# 4. POST /api/challenges?userId={id}
+
+### Scénario 2: Rejoindre un défi et progresser
+# 1. POST /api/users/login
+# 2. GET /api/challenges/active
+# 3. POST /api/participations?userId={id}&challengeId={id}
+# 4. PUT /api/participations (mettre à jour progression)
+# 5. POST /api/comments (commenter)
+
+### Scénario 3: Interactions sociales
+# 1. GET /api/users (trouver des amis)
+# 2. POST /api/users/{id}/friends/{friendId}
+# 3. GET /api/challenges/visible/{userId}
+# 4. POST /api/likes/challenge/{id}?userId={id}
+# 5. GET /api/notifications/user/{userId}/unread
+
+### Scénario 4: Suivi d'un défi
+# 1. GET /api/challenges/{id}
+# 2. GET /api/participations/challenge/{id}
+# 3. GET /api/comments/challenge/{id}
+# 4. GET /api/likes/challenge/{id}/count
+
+### ====================================================================
+### 11. CODES DE STATUT HTTP
+### ====================================================================
+# 200 OK - Succès
+# 201 Created - Ressource créée
+# 400 Bad Request - Données invalides
+# 401 Unauthorized - Non authentifié
+# 404 Not Found - Ressource introuvable
+# 500 Internal Server Error - Erreur serveur
+
+### ====================================================================
+### 12. NOTES POUR L'INTÉGRATION FRONTEND
+### ====================================================================
+
+### Authentification
+# - Pas de JWT/session actuellement
+# - Stocker userId côté frontend après login
+# - Passer userId en query param pour les actions
+
+### Dates
+# - Format ISO8601: "2025-10-21T14:30:00"
+# - Parser avec new Date() en JS
+
+### Progression des défis
+# - DISTANCE: objectif en mètres, progression en mètres
+# - TEMPS: objectif en minutes, progression en minutes
+# - REPETITION: objectif en nombre, progression en nombre
+
+### Visibilité des défis
+# - PUBLIC: visible par tous
+# - FRIENDS_ONLY: visible par amis uniquement
+# - PRIVATE: visible par créateur uniquement
+
+### Notifications
+# - Créées automatiquement lors de:
+#   - Nouvelle participation à un défi
+#   - Nouveau commentaire sur un défi
+#   - Nouveau like (optionnel)
+
+### Validation
+# - Email: format email valide
+# - Dates: dateDebut < dateFin
+# - Objectif: > 0
+# - Texte commentaire: non vide
+
+### ====================================================================
+### FIN DE LA RÉFÉRENCE API
+### ====================================================================

@@ -1,0 +1,263 @@
+### GoUp API - Exemples de requêtes HTTP
+### À utiliser avec REST Client (VS Code) ou IntelliJ HTTP Client
+
+### Variables
+@baseUrl = http://localhost:8080/api
+
+###############################################################################
+### UTILISATEURS
+###############################################################################
+
+### 1. Inscription d'un utilisateur
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "nomUtilisateur": "alice",
+  "email": "alice@test.com",
+  "motDePasse": "test123"
+}
+
+### 2. Inscription d'un deuxième utilisateur
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "nomUtilisateur": "bob",
+  "email": "bob@test.com",
+  "motDePasse": "test123"
+}
+
+### 3. Connexion
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "identifiant": "alice@test.com",
+  "motDePasse": "test123"
+}
+
+### 4. Obtenir un utilisateur par ID
+GET {{baseUrl}}/users/1
+
+### 5. Lister tous les utilisateurs
+GET {{baseUrl}}/users
+
+### 6. Ajouter un ami
+POST {{baseUrl}}/users/1/friends/2
+
+### 7. Lister les amis
+GET {{baseUrl}}/users/1/friends
+
+### 8. Supprimer un ami
+DELETE {{baseUrl}}/users/1/friends/2
+
+###############################################################################
+### SPORTS
+###############################################################################
+
+### 9. Lister tous les sports
+GET {{baseUrl}}/sports
+
+### 10. Obtenir un sport par ID
+GET {{baseUrl}}/sports/1
+
+### 11. Lister les sports par catégorie
+GET {{baseUrl}}/sports/categorie/Cardio
+
+### 12. Créer un nouveau sport
+POST {{baseUrl}}/sports?nom=Boxe&categorie=Combat
+
+###############################################################################
+### DÉFIS (CHALLENGES)
+###############################################################################
+
+### 13. Créer un défi de distance
+POST {{baseUrl}}/challenges?userId=1
+Content-Type: application/json
+
+{
+  "nom": "Défi Running Octobre",
+  "description": "Courir 50 km en octobre",
+  "sportId": 1,
+  "type": "DISTANCE",
+  "objectif": 50000,
+  "dateDebut": "2025-10-15T00:00:00",
+  "dateFin": "2025-10-31T23:59:59",
+  "visibilite": "PUBLIC"
+}
+
+### 14. Créer un défi de répétitions
+POST {{baseUrl}}/challenges?userId=1
+Content-Type: application/json
+
+{
+  "nom": "100 Pompes Challenge",
+  "description": "Réaliser 100 pompes en 30 jours",
+  "sportId": 7,
+  "type": "REPETITION",
+  "objectif": 100,
+  "dateDebut": "2025-10-15T00:00:00",
+  "dateFin": "2025-11-15T23:59:59",
+  "visibilite": "PUBLIC"
+}
+
+### 15. Créer un défi de temps
+POST {{baseUrl}}/challenges?userId=2
+Content-Type: application/json
+
+{
+  "nom": "Défi Yoga 10h",
+  "description": "10 heures de yoga ce mois-ci",
+  "sportId": 14,
+  "type": "TEMPS",
+  "objectif": 600,
+  "dateDebut": "2025-10-15T00:00:00",
+  "dateFin": "2025-10-31T23:59:59",
+  "visibilite": "FRIENDS_ONLY"
+}
+
+### 16. Obtenir un défi par ID
+GET {{baseUrl}}/challenges/1
+
+### 17. Lister tous les défis
+GET {{baseUrl}}/challenges
+
+### 18. Lister les défis actifs
+GET {{baseUrl}}/challenges/active
+
+### 19. Lister les défis visibles pour un utilisateur
+GET {{baseUrl}}/challenges/visible/1
+
+### 20. Lister les défis créés par un utilisateur
+GET {{baseUrl}}/challenges/user/1
+
+### 21. Changer la visibilité d'un défi
+PUT {{baseUrl}}/challenges/1/visibility?visibility=FRIENDS_ONLY
+
+###############################################################################
+### PARTICIPATIONS
+###############################################################################
+
+### 22. Participer à un défi
+POST {{baseUrl}}/participations?userId=2&challengeId=1
+
+### 23. Mettre à jour sa progression (distance)
+PUT {{baseUrl}}/participations?userId=2&challengeId=1
+Content-Type: application/json
+
+{
+  "distanceMetres": 5000
+}
+
+### 24. Mettre à jour sa progression (répétitions)
+PUT {{baseUrl}}/participations?userId=2&challengeId=2
+Content-Type: application/json
+
+{
+  "repetitions": 20
+}
+
+### 25. Mettre à jour sa progression (temps)
+PUT {{baseUrl}}/participations?userId=1&challengeId=3
+Content-Type: application/json
+
+{
+  "tempsMinutes": 60
+}
+
+### 26. Obtenir les participations d'un utilisateur
+GET {{baseUrl}}/participations/user/2
+
+### 27. Obtenir les participants d'un défi
+GET {{baseUrl}}/participations/challenge/1
+
+### 28. Obtenir une participation spécifique
+GET {{baseUrl}}/participations?userId=2&challengeId=1
+
+###############################################################################
+### COMMENTAIRES
+###############################################################################
+
+### 29. Créer un commentaire
+POST {{baseUrl}}/comments?userId=2&challengeId=1
+Content-Type: application/json
+
+{
+  "texte": "Super défi ! J'ai hâte de commencer 🏃"
+}
+
+### 30. Créer un autre commentaire
+POST {{baseUrl}}/comments?userId=1&challengeId=1
+Content-Type: application/json
+
+{
+  "texte": "Merci ! Bon courage à tous 💪"
+}
+
+### 31. Obtenir les commentaires d'un défi
+GET {{baseUrl}}/comments/challenge/1
+
+### 32. Supprimer un commentaire
+DELETE {{baseUrl}}/comments/1?userId=2
+
+###############################################################################
+### LIKES
+###############################################################################
+
+### 33. Liker un défi
+POST {{baseUrl}}/likes/challenge/1?userId=2
+
+### 34. Liker un autre défi
+POST {{baseUrl}}/likes/challenge/2?userId=1
+
+### 35. Compter les likes d'un défi
+GET {{baseUrl}}/likes/challenge/1/count
+
+### 36. Retirer un like d'un défi
+DELETE {{baseUrl}}/likes/challenge/1?userId=2
+
+### 37. Liker un commentaire
+POST {{baseUrl}}/likes/comment/1?userId=1
+
+### 38. Compter les likes d'un commentaire
+GET {{baseUrl}}/likes/comment/1/count
+
+### 39. Retirer un like d'un commentaire
+DELETE {{baseUrl}}/likes/comment/1?userId=1
+
+###############################################################################
+### NOTIFICATIONS
+###############################################################################
+
+### 40. Obtenir les notifications d'un utilisateur
+GET {{baseUrl}}/notifications/user/1
+
+### 41. Obtenir les notifications non lues
+GET {{baseUrl}}/notifications/user/1/unread
+
+### 42. Marquer une notification comme lue
+PUT {{baseUrl}}/notifications/1/read
+
+### 43. Marquer toutes les notifications comme lues
+PUT {{baseUrl}}/notifications/user/1/read-all
+
+###############################################################################
+### SCÉNARIOS DE TEST COMPLETS
+###############################################################################
+
+### Scénario 1 : Alice crée un compte et un défi
+# 1. POST /api/users/register (Alice)
+# 2. POST /api/challenges?userId=1 (Créer défi running)
+
+### Scénario 2 : Bob rejoint et progresse dans le défi
+# 1. POST /api/users/register (Bob)
+# 2. POST /api/participations?userId=2&challengeId=1
+# 3. PUT /api/participations (Ajouter progression)
+# 4. POST /api/comments (Commenter)
+
+### Scénario 3 : Interactions sociales
+# 1. POST /api/users/1/friends/2 (Devenir amis)
+# 2. POST /api/likes/challenge/1?userId=2 (Liker)
+# 3. POST /api/comments (Commenter)
+# 4. GET /api/notifications/user/1 (Voir notifications)
