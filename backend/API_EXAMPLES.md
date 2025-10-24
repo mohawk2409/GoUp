@@ -391,7 +391,7 @@ Content-Type: application/json
   "description": "Courir 50 km en octobre",
   "sportId": 1,
   "type": "DISTANCE",
-  "objectif": 50000,
+  "objectif": 50,
   "dateDebut": "2025-10-15T00:00:00",
   "dateFin": "2025-10-31T23:59:59",
   "visibilite": "PUBLIC"
@@ -407,7 +407,7 @@ Content-Type: application/json
   "sportNom": "Course à pied",
   "sportCategorie": "Cardio",
   "type": "DISTANCE",
-  "objectif": 50000,
+  "objectif": 50,
   "dateDebut": "2025-10-15T00:00:00",
   "dateFin": "2025-10-31T23:59:59",
   "createurNom": "alice",
@@ -419,6 +419,8 @@ Content-Type: application/json
   "nombreCommentaires": 0
 }
 ```
+
+**Note**: L'objectif est maintenant en **kilomètres** (ex: 50 = 50 km) au lieu de mètres.
 
 ---
 
@@ -506,9 +508,52 @@ Content-Type: application/json
 }
 ```
 
+### 4.4 Créer un défi de fréquence (entraînement hebdomadaire)
+
+**Requête**
+```http
+POST /api/challenges?userId=1
+Content-Type: application/json
+
+{
+  "nom": "3 séances par semaine",
+  "description": "S'entraîner 12 fois dans le mois",
+  "sportId": 1,
+  "type": "FREQUENCE",
+  "objectif": 12,
+  "dateDebut": "2025-11-01T00:00:00",
+  "dateFin": "2025-11-30T23:59:59",
+  "visibilite": "PUBLIC"
+}
+```
+
+**Réponse - Succès (201 Created)**
+```json
+{
+  "id": 4,
+  "nom": "3 séances par semaine",
+  "description": "S'entraîner 12 fois dans le mois",
+  "sportNom": "Course à pied",
+  "sportCategorie": "Cardio",
+  "type": "FREQUENCE",
+  "objectif": 12,
+  "dateDebut": "2025-11-01T00:00:00",
+  "dateFin": "2025-11-30T23:59:59",
+  "createurNom": "alice",
+  "createurId": 1,
+  "visibilite": "PUBLIC",
+  "dateCreation": "2025-10-21T14:48:00.456789",
+  "nombreParticipants": 0,
+  "nombreLikes": 0,
+  "nombreCommentaires": 0
+}
+```
+
+**Note**: L'objectif est en **nombre de séances** (ex: 12 = 12 séances)
+
 ---
 
-### 4.4 Obtenir un défi par ID (avec compteurs)
+### 4.5 Obtenir un défi par ID (avec compteurs)
 
 **Requête**
 ```http
@@ -674,7 +719,44 @@ GET /api/challenges/user/1
 
 ---
 
-### 4.8 Changer la visibilité d'un défi
+### 4.8 Obtenir tous les types de mesure disponibles
+
+**Requête**
+```http
+GET /api/challenges/types
+```
+
+**Réponse - Succès (200 OK)**
+```json
+[
+  {
+    "type": "TEMPS",
+    "unite": "minutes",
+    "description": "Durée totale de l'activité"
+  },
+  {
+    "type": "DISTANCE",
+    "unite": "km",
+    "description": "Distance totale à parcourir"
+  },
+  {
+    "type": "REPETITION",
+    "unite": "répétitions",
+    "description": "Nombre de répétitions à effectuer"
+  },
+  {
+    "type": "FREQUENCE",
+    "unite": "séances",
+    "description": "Nombre de séances à réaliser"
+  }
+]
+```
+
+**Note**: Utilisez cet endpoint pour alimenter le sélecteur "Type de mesure" dans votre formulaire de création de défis.
+
+---
+
+### 4.9 Changer la visibilité d'un défi
 
 **Requête**
 ```http
@@ -1617,7 +1699,7 @@ interface ChallengeDTO {
   description: string;
   sportNom: string;
   sportCategorie: string;
-  type: 'DISTANCE' | 'TEMPS' | 'REPETITION';
+  type: 'DISTANCE' | 'TEMPS' | 'REPETITION' | 'FREQUENCE';
   objectif: number;
   dateDebut: string;
   dateFin: string;
@@ -1628,6 +1710,12 @@ interface ChallengeDTO {
   nombreParticipants: number;
   nombreLikes: number;
   nombreCommentaires: number;
+}
+
+interface ChallengeTypeInfo {
+  type: 'DISTANCE' | 'TEMPS' | 'REPETITION' | 'FREQUENCE';
+  unite: string;
+  description: string;
 }
 
 interface ParticipationDTO {

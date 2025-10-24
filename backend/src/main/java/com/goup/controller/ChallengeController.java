@@ -2,6 +2,7 @@ package com.goup.controller;
 
 import com.goup.dto.ChallengeCreateDTO;
 import com.goup.dto.ChallengeDTO;
+import com.goup.entity.ChallengeType;
 import com.goup.entity.Visibility;
 import com.goup.service.ChallengeService;
 import jakarta.validation.Valid;
@@ -10,7 +11,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/challenges")
@@ -84,5 +88,21 @@ public class ChallengeController {
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().build();
         }
+    }
+    
+    /**
+     * Récupère tous les types de mesure disponibles avec leurs unités
+     * @return Map avec le type et ses informations (unité, description)
+     */
+    @GetMapping("/types")
+    public ResponseEntity<List<Map<String, String>>> getChallengeTypes() {
+        List<Map<String, String>> types = Arrays.stream(ChallengeType.values())
+            .map(type -> Map.of(
+                "type", type.name(),
+                "unite", type.getUnite(),
+                "description", type.getDescription()
+            ))
+            .collect(Collectors.toList());
+        return ResponseEntity.ok(types);
     }
 }

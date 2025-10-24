@@ -97,7 +97,7 @@ POST {{baseUrl}}/sports?nom=Boxe&categorie=Combat
 # POST /api/challenges?userId={userId}
 # Body: ChallengeCreateDTO
 # Response 201: ChallengeDTO | 400: Bad Request
-# Types: DISTANCE (mètres), TEMPS (minutes), REPETITION (nombre)
+# Types: DISTANCE (km), TEMPS (minutes), REPETITION (nombre), FREQUENCE (séances)
 # Visibilité: PUBLIC, FRIENDS_ONLY, PRIVATE
 POST {{baseUrl}}/challenges?userId=1
 Content-Type: application/json
@@ -107,7 +107,7 @@ Content-Type: application/json
   "description": "Courir 50 km en octobre",
   "sportId": 1,
   "type": "DISTANCE",
-  "objectif": 50000,
+  "objectif": 50,
   "dateDebut": "2025-10-15T00:00:00",
   "dateFin": "2025-10-31T23:59:59",
   "visibilite": "PUBLIC"
@@ -143,10 +143,52 @@ Content-Type: application/json
   "visibilite": "FRIENDS_ONLY"
 }
 
-### 4.4 Obtenir un défi par ID (avec compteurs)
+### 4.3b Créer un défi de fréquence
+POST {{baseUrl}}/challenges?userId=1
+Content-Type: application/json
+
+{
+  "nom": "3 séances par semaine",
+  "description": "S'entraîner 12 fois dans le mois",
+  "sportId": 1,
+  "type": "FREQUENCE",
+  "objectif": 12,
+  "dateDebut": "2025-11-01T00:00:00",
+  "dateFin": "2025-11-30T23:59:59",
+  "visibilite": "PUBLIC"
+}
+
+### 4.4 Récupérer les types de mesure disponibles
+# GET /api/challenges/types
+# Response 200: [{ type, unite, description }]
+GET {{baseUrl}}/challenges/types
+
+### 4.5 Obtenir un défi par ID (avec compteurs)
 # GET /api/challenges/{id}
 # Response 200: ChallengeDTO (inclut nombreParticipants, nombreLikes, nombreCommentaires)
 GET {{baseUrl}}/challenges/1
+
+### 4.6 Lister tous les défis
+# GET /api/challenges
+# Response 200: ChallengeDTO[]
+GET {{baseUrl}}/challenges
+
+### 4.7 Lister les défis actifs (en cours)
+# GET /api/challenges/active
+# Response 200: ChallengeDTO[] (défis entre dateDebut et dateFin)
+GET {{baseUrl}}/challenges/active
+
+### 4.8 Lister les défis visibles pour un utilisateur
+# GET /api/challenges/visible/{userId}
+# Response 200: ChallengeDTO[] (défis publics + défis d'amis)
+GET {{baseUrl}}/challenges/visible/1
+
+### 4.9 Lister les défis créés par un utilisateur
+# GET /api/challenges/user/{userId}
+# Response 200: ChallengeDTO[]
+GET {{baseUrl}}/challenges/user/1
+
+### 4.10 Changer la visibilité d'un défi
 
 ### 4.5 Lister tous les défis
 # GET /api/challenges
