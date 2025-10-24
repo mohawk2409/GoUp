@@ -42,7 +42,7 @@ public class User {
     private Integer totalDefisTermines = 0;
     private Double distanceTotale = 0.0;
     private Integer tempsTotalMinutes = 0;
-    private Integer repetitionsTotales = 0;
+    private Integer seancesTotales = 0;
     
     // Relations
     @OneToMany(mappedBy = "createur")

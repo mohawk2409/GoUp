@@ -122,7 +122,7 @@ public class UserService {
     
     // Méthode utilitaire pour mise à jour des statistiques
     @Transactional
-    public void updateStatistics(Long userId, Integer temps, Double distance, Integer repetitions) {
+    public void updateStatistics(Long userId, Integer temps, Double distance, Integer seances) {
         User user = userRepository.findById(userId)
             .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé"));
         
@@ -132,8 +132,8 @@ public class UserService {
         if (distance != null) {
             user.setDistanceTotale(user.getDistanceTotale() + distance);
         }
-        if (repetitions != null) {
-            user.setRepetitionsTotales(user.getRepetitionsTotales() + repetitions);
+        if (seances != null) {
+            user.setSeancesTotales(user.getSeancesTotales() + seances);
         }
         
         userRepository.save(user);
@@ -155,7 +155,7 @@ public class UserService {
             user.getTotalDefisTermines(),
             user.getDistanceTotale(),
             user.getTempsTotalMinutes(),
-            user.getRepetitionsTotales()
+            user.getSeancesTotales()
         );
     }
 }

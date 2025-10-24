@@ -34,7 +34,7 @@ public class Participation {
     // Progression de l'utilisateur
     private Integer tempsMinutes = 0;
     private Double distanceMetres = 0.0;
-    private Integer repetitions = 0;
+    private Integer seances = 0;
     
     private Boolean termine = false;
     

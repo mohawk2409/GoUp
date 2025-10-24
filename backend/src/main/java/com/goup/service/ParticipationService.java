@@ -64,7 +64,7 @@ public class ParticipationService {
         // Calculer les différences pour les statistiques
         Integer diffTemps = 0;
         Double diffDistance = 0.0;
-        Integer diffReps = 0;
+        Integer diffSeances = 0;
         
         if (dto.getTempsMinutes() != null && dto.getTempsMinutes() > 0) {
             diffTemps = dto.getTempsMinutes();
@@ -76,9 +76,9 @@ public class ParticipationService {
             participation.setDistanceMetres(participation.getDistanceMetres() + dto.getDistanceMetres());
         }
         
-        if (dto.getRepetitions() != null && dto.getRepetitions() > 0) {
-            diffReps = dto.getRepetitions();
-            participation.setRepetitions(participation.getRepetitions() + dto.getRepetitions());
+        if (dto.getSeances() != null && dto.getSeances() > 0) {
+            diffSeances = dto.getSeances();
+            participation.setSeances(participation.getSeances() + dto.getSeances());
         }
         
         participation.setDerniereMiseAJour(LocalDateTime.now());
@@ -97,7 +97,7 @@ public class ParticipationService {
         participation = participationRepository.save(participation);
         
         // Mettre à jour les statistiques de l'utilisateur
-        userService.updateStatistics(userId, diffTemps, diffDistance, diffReps);
+        userService.updateStatistics(userId, diffTemps, diffDistance, diffSeances);
         
         return convertToDTO(participation);
     }
@@ -138,8 +138,8 @@ public class ParticipationService {
                 return participation.getTempsMinutes() >= objectif;
             case DISTANCE:
                 return participation.getDistanceMetres() >= objectif;
-            case REPETITION:
-                return participation.getRepetitions() >= objectif;
+            case FREQUENCE:
+                return participation.getSeances() >= objectif;
             default:
                 return false;
         }
@@ -155,7 +155,7 @@ public class ParticipationService {
             participation.getDateInscription(),
             participation.getTempsMinutes(),
             participation.getDistanceMetres(),
-            participation.getRepetitions(),
+            participation.getSeances(),
             participation.getTermine(),
             participation.getDerniereMiseAJour()
         );

@@ -18,7 +18,7 @@ public class ParticipationDTO {
     private LocalDateTime dateInscription;
     private Integer tempsMinutes;
     private Double distanceMetres;
-    private Integer repetitions;
+    private Integer seances;
     private Boolean termine;
     private LocalDateTime derniereMiseAJour;
 }

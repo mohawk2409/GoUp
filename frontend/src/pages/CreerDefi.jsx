@@ -317,7 +317,6 @@ const CreerDefi = () => {
                     <option value="">Type de mesure</option>
                     <option value="distance">Distance</option>
                     <option value="temps">Temps</option>
-                    <option value="repetitions">Répétitions</option>
                     <option value="frequence">Fréquence</option>
                   </select>
                 </div>

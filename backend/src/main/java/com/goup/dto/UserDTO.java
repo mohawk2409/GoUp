@@ -19,5 +19,5 @@ public class UserDTO {
     private Integer totalDefisTermines;
     private Double distanceTotale;
     private Integer tempsTotalMinutes;
-    private Integer repetitionsTotales;
+    private Integer seancesTotales;
 }

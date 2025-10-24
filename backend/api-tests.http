@@ -87,15 +87,15 @@ Content-Type: application/json
   "visibilite": "PUBLIC"
 }
 
-### 14. Créer un défi de répétitions
+### 14. Créer un défi de fréquence
 POST {{baseUrl}}/challenges?userId=1
 Content-Type: application/json
 
 {
-  "nom": "100 Pompes Challenge",
-  "description": "Réaliser 100 pompes en 30 jours",
+  "nom": "100 Séances Challenge",
+  "description": "Réaliser 100 séances en 30 jours",
   "sportId": 7,
-  "type": "REPETITION",
+  "type": "FREQUENCE",
   "objectif": 100,
   "dateDebut": "2025-10-15T00:00:00",
   "dateFin": "2025-11-15T23:59:59",
