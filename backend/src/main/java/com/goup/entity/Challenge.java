@@ -55,7 +55,7 @@ public class Challenge {
     @Column(nullable = false, updatable = false)
     private LocalDateTime dateCreation;
     
-    // Relations
+    // Relations entre les challenges et les autres entités
     @OneToMany(mappedBy = "challenge", cascade = CascadeType.ALL)
     private Set<Participation> participants = new HashSet<>();
     

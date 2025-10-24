@@ -36,12 +36,12 @@ public class User {
     @Column(nullable = false, updatable = false)
     private LocalDateTime dateInscription;
     
-    // Statistiques calculées automatiquement
+    // Statistiques calculées 
     private Integer totalDefisCreees = 0;
     private Integer totalDefisParticipes = 0;
     private Integer totalDefisTermines = 0;
-    private Double distanceTotale = 0.0;      // en mètres
-    private Integer tempsTotalMinutes = 0;     // en minutes
+    private Double distanceTotale = 0.0;
+    private Integer tempsTotalMinutes = 0;
     private Integer repetitionsTotales = 0;
     
     // Relations

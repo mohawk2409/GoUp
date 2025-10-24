@@ -20,7 +20,7 @@ public class Notification {
     private Long id;
     
     @Column(nullable = false)
-    private String type; // Ex: "NOUVEAU_COMMENTAIRE", "NOUVEAU_LIKE", "INVITATION_AMI", etc.
+    private String type; // Ex:demande d'ami, initation à un challenge..
     
     @Column(nullable = false, length = 500)
     private String contenu;

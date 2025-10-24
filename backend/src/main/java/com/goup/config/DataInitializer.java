@@ -14,7 +14,7 @@ public class DataInitializer implements CommandLineRunner {
     
     @Override
     public void run(String... args) {
-        // Initialiser des sports si la base est vide
+        // Initialiser des sports
         if (sportRepository.count() == 0) {
             // Course à pied
             sportRepository.save(new Sport(null, "Course à pied", "Cardio"));

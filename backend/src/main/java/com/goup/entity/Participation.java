@@ -32,11 +32,11 @@ public class Participation {
     private LocalDateTime dateInscription;
     
     // Progression de l'utilisateur
-    private Integer tempsMinutes = 0;      // Temps effectué en minutes
-    private Double distanceMetres = 0.0;   // Distance effectuée en mètres
-    private Integer repetitions = 0;       // Répétitions effectuées
+    private Integer tempsMinutes = 0;
+    private Double distanceMetres = 0.0;
+    private Integer repetitions = 0;
     
-    private Boolean termine = false;       // Défi terminé ?
+    private Boolean termine = false;
     
     @Column(updatable = true)
     private LocalDateTime derniereMiseAJour;

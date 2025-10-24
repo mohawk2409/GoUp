@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*") // Pour les tests, à configurer correctement en production
+@CrossOrigin(origins = "*") //Pour la sécurité, pour l'instant ouver à tous
 public class UserController {
     
     private final UserService userService;
