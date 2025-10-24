@@ -59,8 +59,7 @@ public class CommentService {
         // Vérifier que l'utilisateur est l'auteur
         if (!comment.getAuteur().getId().equals(userId)) {
             throw new RuntimeException("Vous ne pouvez supprimer que vos propres commentaires");
-        }
-        
+        } 
         commentRepository.delete(comment);
     }
     
