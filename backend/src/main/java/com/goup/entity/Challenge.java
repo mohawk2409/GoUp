@@ -29,22 +29,11 @@ public class Challenge {
     @ManyToOne
     @JoinColumn(name = "sport_id", nullable = false)
     private Sport sport;
-    
-    /**
-     * Type de mesure pour l'objectif (TEMPS, DISTANCE, REPETITION, FREQUENCE)
-     * Définit l'unité de mesure de l'objectif
-     */
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private ChallengeType type;
     
-    /**
-     * Valeur de l'objectif à atteindre
-     * - Si type = TEMPS : valeur en minutes (ex: 10 = 10 minutes)
-     * - Si type = DISTANCE : valeur en kilomètres (ex: 10 = 10 km)
-     * - Si type = REPETITION : nombre de répétitions (ex: 100 = 100 répétitions)
-     * - Si type = FREQUENCE : nombre de séances (ex: 5 = 5 séances)
-     */
     @Column(nullable = false)
     private Integer objectif;
     

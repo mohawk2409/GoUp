@@ -29,10 +29,6 @@ public class ChallengeDTO {
     private Integer nombreLikes;
     private Integer nombreCommentaires;
     
-    /**
-     * Retourne l'objectif formaté avec son unité
-     * @return une chaîne formatée (ex: "10 km", "100 répétitions")
-     */
     public String getObjectifFormate() {
         if (type == null || objectif == null) {
             return String.valueOf(objectif);

@@ -90,10 +90,6 @@ public class ChallengeController {
         }
     }
     
-    /**
-     * Récupère tous les types de mesure disponibles avec leurs unités
-     * @return Map avec le type et ses informations (unité, description)
-     */
     @GetMapping("/types")
     public ResponseEntity<List<Map<String, String>>> getChallengeTypes() {
         List<Map<String, String>> types = Arrays.stream(ChallengeType.values())
