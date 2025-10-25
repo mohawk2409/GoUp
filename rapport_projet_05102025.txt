@@ -1,0 +1,8 @@
+Rapport :
+Julien BOUGUES :
+J'ai commencé à créer les classes, je code d'abord en java, et ensuite j'intégrerai les liens entre le front et la base de données
+
+
+Raphaël CHARTON :
+
+J'ai bien avancé le frontend il ne me reste plus que 2 pages à faire et ensuite je m'intéresserai aussi à lier le frontend et le backend.
